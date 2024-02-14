@@ -9,6 +9,7 @@
     ],
     "scripts": {
         "pack": "npm run build && npm pack",
+        "publish": "npm run pack && npm publish",
         "build": "rm -rf dist/ && prettier --write src/ && npm run git && npm run build:esm && npm run build:cjs ",
         "git":"git add --all && git commit -m \"build deployed, by wcodewiz\" && git push --all",
         "build:esm": "tsc",
