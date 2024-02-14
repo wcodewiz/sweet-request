@@ -1,0 +1,35 @@
+{
+    "name": "sweet-request",
+    "version": "1.0.0",
+    "description": "sweet request developed with solid architecture",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "pack": "npm run build && npm pack",
+        "build": "rm -rf dist/ && prettier --write src/ && npm run git && npm run build:esm && npm run build:cjs ",
+        "git":"git add --all && git commit -m \"build deployed, by wcodewiz\" && git push --all",
+        "build:esm": "tsc",
+        "build:cjs": "tsc --module CommonJs --outDir dist/cjs"
+    },
+    "author": "Samuel Clinton",
+    "license": "MIT",
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.3",
+        "@types/react": "^18.2.48",
+        "@types/react-dom": "^18.2.18",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "typescript": "^5.3.3"
+    },
+    "dependencies": {
+        "axios": "^1.6.7",
+        "react-router-dom": "^6.21.3"
+    }
+}
