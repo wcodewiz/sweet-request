@@ -1,6 +1,6 @@
 {
     "name": "sweet-request",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "sweet request developed with solid architecture",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -9,7 +9,7 @@
     ],
     "scripts": {
         "pack": "npm run build && npm pack",
-        "publish": "npm run pack && npm publish",
+        "publish": "npm run pack && npm patch && npm publish",
         "build": "rm -rf dist/ && prettier --write src/ && npm run git && npm run build:esm && npm run build:cjs ",
         "git":"git add --all && git commit -m \"build deployed, by wcodewiz\" && git push --all",
         "build:esm": "tsc",
